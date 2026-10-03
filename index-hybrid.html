@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>qodon | Build software at the speed of thought</title>
   <meta name="description" content="qodon is the AI-native no-code engine that turns plain-language requirements into secure, governed enterprise applications. Start from the App Library: CTMS, IPM and QMS.">
@@ -25,6 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@700&display=swap">
   <link rel="stylesheet" href="qodon.css">
+  <link rel="stylesheet" href="hybrid.css">
   <script type="application/ld+json">{
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -34,6 +36,8 @@
   }</script>
 </head>
 <body>
+  <a class="skip-link" href="#top">Skip to content</a>
+  <div class="preview-banner">PREVIEW: hybrid light theme with plain-language copy and accessibility fixes. Compare with the <a href="index.html">current dark site</a>.</div>
 
   <!-- ===== Header ===== -->
   <header class="site-header">
@@ -65,7 +69,7 @@
         <div>
           <span class="eyebrow"><span class="dot"></span>AI-native no-code platform</span>
           <h1><span class="hash">#</span>Build software at the speed of thought.</h1>
-          <p class="lead">The AI-native development engine that turns plain-language requirements into secure, full-stack enterprise applications, with roles, audit trails and tenants already in place. No complex setup.</p>
+          <p class="lead">Describe what you need in plain words, and qodon builds a secure, working business app, with user roles, approvals and a full history of changes already in place. No coding, no complex setup.</p>
           <div class="hero-actions">
             <a data-link="signup" class="btn btn-neon btn-lg">Start Building Free</a>
             <a href="#library" class="btn btn-outline btn-lg">Explore App Library</a>
@@ -74,14 +78,21 @@
         <div class="terminal" aria-hidden="true">
           <div class="terminal-bar"><span></span><span></span><span></span></div>
           <div class="terminal-body">
-            <div><span class="p">qodon&gt;</span> <span class="w">Track study sites, milestones and monitoring visits with sponsor approvals</span></div>
-            <div class="m">→ modelling entities: Study, Site, Visit, Milestone</div>
-            <div class="m">→ generating pages, menus, workflows</div>
-            <div class="m">→ applying roles, audit trail, tenant isolation</div>
-            <div><span class="ok">✓ app ready</span> <span class="m">· staging tenant provisioned</span></div>
+            <div><span class="p">qodon&gt;</span> <span class="w" id="tPrompt">Track stock across three warehouses with low-stock alerts</span></div>
+            <div class="m" id="tData">→ setting up data: Product, Warehouse, Stock level, Reorder</div>
+            <div class="m">→ creating screens, menus and workflows</div>
+            <div class="m">→ adding user roles, approvals and change history</div>
+            <div><span class="ok">✓ app ready</span> <span class="m">· test copy created</span></div>
             <div><span class="p">qodon&gt;</span> <span class="cursor"></span></div>
           </div>
         </div>
+      </div>
+      <div class="container industries" aria-label="Industries">
+        <span class="industries-label">Built for</span>
+        <ul>
+          <li>Life sciences</li><li>Manufacturing</li><li>Retail</li><li>HR &amp; People</li>
+          <li>Education</li><li>Public sector</li><li>IT &amp; Operations</li><li>Legal &amp; IP</li>
+        </ul>
       </div>
     </section>
 
@@ -90,39 +101,39 @@
       <div class="container">
         <div class="section-head">
           <span class="kicker">Features</span>
-          <h2>Large-scale enterprise apps in minutes.</h2>
-          <p>Design pages, menus and branding, then ship. Reusable AI templates and visual builders cut the handoffs between design and engineering.</p>
+          <h2>Business apps in minutes, not months.</h2>
+          <p>Design screens, menus and branding, then go live. Ready-made AI templates and visual builders mean less waiting on developers.</p>
         </div>
         <div class="grid-3">
           <div class="card">
             <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 17.5h7M17.5 14v7"/></svg></div>
             <h3>Visual App Designer</h3>
-            <p>Page and menu editor with branding controls and live preview. Build screens and publish without writing code.</p>
+            <p>Build screens and menus, add your logo and colours, and preview changes live. No code needed.</p>
           </div>
           <div class="card">
             <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.9A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></svg></div>
             <h3>One-Click Staging &amp; Deploy</h3>
-            <p>Provision staging or production tenants and promote changes with a single action and clear deployment status.</p>
+            <p>Try changes in a safe test copy, then publish them to everyone with one click. You always see what's live.</p>
           </div>
           <div class="card">
             <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg></div>
-            <h3>Central Content Hub</h3>
-            <p>Manage codelists, pages and dynamic entities centrally, then sync them to tenants with conflict-aware reconciliation.</p>
+            <h3>Everything in One Place</h3>
+            <p>Keep your lists, screens and data structures in one place, and update all your apps safely at once.</p>
           </div>
           <div class="card">
             <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
             <h3>Safe &amp; Robust</h3>
-            <p>Enterprise controls come built in: RBAC, audit trails and tenant isolation.</p>
+            <p>Control who can see and do what, keep a full history of every change, and keep each team's data separate.</p>
           </div>
           <div class="card">
             <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8L20 10.7l-5 3.6 1.9 5.9L12 16.6l-4.9 3.6L9 14.3l-5-3.6 6.1-1.9z"/></svg></div>
             <h3>AI Templates</h3>
-            <p>Start from reusable AI templates and configurable AI agents instead of a blank canvas.</p>
+            <p>Start from ready-made templates and AI assistants instead of a blank page.</p>
           </div>
           <div class="card">
             <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div>
             <h3>Zero Code</h3>
-            <p>Design apps visually and publish production-ready software. Pilots scale into governed production without rewrites.</p>
+            <p>Build apps visually and go live without writing code. Start small and grow to company-wide use without starting over.</p>
           </div>
         </div>
       </div>
@@ -134,8 +145,9 @@
         <div class="section-head">
           <span class="kicker">App Library</span>
           <h2>The qodon App Library</h2>
-          <p>Skip the blank canvas. Try a live demo, deploy a pre-configured app as it is, or use it as the starting template for your own.</p>
+          <p>Skip the blank page. Try a live demo, use a ready-made app as it is, or make it your own.</p>
         </div>
+        <h3 class="lib-group">Featured: regulated industries</h3>
         <div class="grid-3">
 
           <!-- CTMS -->
@@ -187,6 +199,13 @@
           </article>
 
         </div>
+        <h3 class="lib-group">Everyday templates <span class="tag tag-slate">Coming soon</span></h3>
+        <div class="grid-4 everyday">
+          <article class="card"><h4>CRM &amp; Sales Pipeline</h4><p>Leads, deals and follow-ups in one view.</p></article>
+          <article class="card"><h4>HR Onboarding</h4><p>New-hire checklists with manager and IT approvals.</p></article>
+          <article class="card"><h4>Inventory &amp; Assets</h4><p>Stock levels, locations and equipment checkouts.</p></article>
+          <article class="card"><h4>Service Desk</h4><p>Tickets, priorities and response times for any team.</p></article>
+        </div>
         <p class="library-note">Need a different domain? <a href="#contact">Tell us what you're building</a> and we'll scope it with you.</p>
       </div>
     </section>
@@ -197,7 +216,7 @@
         <div class="section-head">
           <span class="kicker">Infrastructure</span>
           <h2>Absolute Deployment Freedom</h2>
-          <p>The layer that generates your app stays fully separate from the application it produces. Run it with us, or take it with you.</p>
+          <p>Your app is never locked in. Run it with us, or take it with you to your own servers.</p>
         </div>
         <div class="deploy-split">
           <div class="card deploy-box active">
@@ -359,8 +378,8 @@
       <div class="container contact-grid">
         <div class="contact-info">
           <span class="eyebrow"><span class="dot"></span>Contact</span>
-          <h2>Moving a prototype into production?</h2>
-          <p>Send our engineering desk a short description of what you're building, or call us for priority help. qodon is built on open-source principles, to cut the time and cost of getting to live software.</p>
+          <h2>Tell us what you want to build</h2>
+          <p>Send a short description of your idea or process, or call us. We'll help you get it live. qodon is built on open-source principles, to cut the time and cost of getting to working software.</p>
           <a class="contact-line" href="mailto:info@goqodon.com">
             <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span>
             info@goqodon.com
@@ -512,6 +531,24 @@
       var a = e.target.closest('a[aria-disabled="true"]');
       if (a) e.preventDefault();
     });
+
+    // hero terminal: examples from different industries
+    (function () {
+      var EX = [
+        ['Track stock across three warehouses with low-stock alerts', 'Product, Warehouse, Stock level, Reorder'],
+        ['Onboard new hires with manager and IT approvals', 'Employee, Onboarding task, Approval, Equipment'],
+        ['Log customer tickets with priorities and response times', 'Ticket, Customer, Agent, Response target'],
+        ['Manage student enrolments, courses and fees', 'Student, Course, Enrolment, Payment'],
+        ['Track study sites, milestones and monitoring visits', 'Study, Site, Visit, Milestone']
+      ];
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var i = 0, p = document.getElementById('tPrompt'), d = document.getElementById('tData');
+      setInterval(function () {
+        i = (i + 1) % EX.length;
+        p.textContent = EX[i][0];
+        d.textContent = '→ setting up data: ' + EX[i][1];
+      }, 4000);
+    })();
 
     // mobile menu
     (function () {

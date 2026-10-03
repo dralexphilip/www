@@ -1,0 +1,104 @@
+/* qodon hybrid theme (preview): dark header, hero and footer; light content sections.
+   Loaded after qodon.css. The light sections re-map the theme variables, so every component
+   inside them switches automatically; the overrides below cover the few that need it. */
+
+/* ---------- softer dark for large areas (brand #0B0F19 stays for logo, icon tile, details) ---------- */
+body { background: #111827; }
+.site-header { background: rgba(17, 24, 39, 0.86); }
+.terminal { background: #0B0F19; }                 /* deeper than the page now, so it still stands out */
+
+/* ease the hero's bottom edge into the first light section */
+.hero::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 120px; pointer-events: none;
+  background: linear-gradient(to bottom, rgba(26, 34, 51, 0), #1A2233);
+}
+.hero-grid { z-index: 1; }
+
+/* ---------- light sections ---------- */
+#features, #library, #deployment, #pricing, #contact {
+  --surface: #FFFFFF;
+  --surface-2: #FFFFFF;
+  --neon: #007F35;                        /* deeper green: ~5:1 on white */
+  --neon-soft: rgba(0, 127, 53, 0.08);
+  --neon-glow: rgba(0, 127, 53, 0.15);
+  --white: #101828;                       /* "white" is the heading colour; dark slate on light */
+  --text: #475467;
+  --slate: #667085;
+  --line: #E4E7EC;
+  --line-strong: #D0D5DD;
+  background: #F5F7FA;
+  border-top: 1px solid #E4E7EC;
+  color: var(--text);                     /* body sets its colour once for the dark page; re-apply here */
+}
+#library, #pricing { background: #FFFFFF; }
+#features { border-top: 0; background: linear-gradient(to bottom, #E9EDF2 0, #F5F7FA 160px); }
+
+/* cards: white with a soft shadow instead of a dark surface */
+#features .card, #library .card, #deployment .card, #pricing .card, #contact .card {
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+#library .card, #pricing .card { background: #F9FAFB; }
+#features .card:hover, #library .card:hover, #pricing .card:hover { box-shadow: 0 6px 16px rgba(16, 24, 40, 0.08); }
+
+/* buttons keep the signature neon, without the glow (it reads as blur on white) */
+#features .btn-neon, #library .btn-neon, #deployment .btn-neon, #pricing .btn-neon, #contact .btn-neon {
+  background: #00FF66; color: #0B0F19; box-shadow: none; border-color: #00D957;
+}
+#library .btn-neon:hover, #pricing .btn-neon:hover, #contact .btn-neon:hover { box-shadow: 0 4px 12px rgba(0, 160, 70, 0.25); }
+#library .btn-outline:hover, #pricing .btn-outline:hover { background: #FFFFFF; }
+
+/* icon badges: dark tile with a neon icon, like the favicon */
+#features .icon-badge, #contact .icon-badge { background: #0B0F19; color: #00FF66; box-shadow: none; }
+
+/* contact form fields on light */
+#contact .form input, #contact .form textarea { background: #FFFFFF; color: #101828; border-color: #D0D5DD; }
+#contact .form input::placeholder, #contact .form textarea::placeholder { color: #98A2B3; }
+#contact .eyebrow .dot { box-shadow: none; }
+
+/* solid badge on the highlighted card */
+#pricing .price-card.featured .tag { background: #007F35; color: #FFFFFF; }
+#pricing .price-card.featured { box-shadow: 0 0 0 1px #007F35, 0 10px 30px rgba(0, 127, 53, 0.12); }
+
+/* free trial bar */
+#pricing .trial { border-color: rgba(0, 127, 53, 0.35); }
+
+/* ---------- inclusive additions ---------- */
+/* industry strip under the hero */
+.industries { position: relative; z-index: 1; display: flex; align-items: center; gap: 14px 18px; flex-wrap: wrap; margin-top: 56px; }
+.industries-label { color: #A3B0C2; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.industries ul { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
+.industries li { color: #FFFFFF; font-size: 0.9rem; padding: 6px 14px; border: 1px solid rgba(163, 176, 194, 0.3); border-radius: 999px; }
+
+/* app library groups */
+.lib-group { font-size: 1.05rem; margin: 0 0 18px; display: flex; align-items: center; gap: 10px; }
+.lib-group + .grid-3, .lib-group + .grid-4 { margin-bottom: 44px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.everyday .card { padding: 22px; background: #FFFFFF; border-style: dashed; }
+.everyday h4 { color: var(--white); font-size: 1rem; margin-bottom: 6px; }
+.everyday p { font-size: 0.9rem; }
+@media (max-width: 960px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .grid-4 { grid-template-columns: 1fr; } .industries { margin-top: 40px; } }
+
+/* skip link: hidden until focused with the keyboard */
+.skip-link { position: absolute; left: 16px; top: -60px; z-index: 300; background: #00FF66; color: #0B0F19; font-weight: 700; padding: 10px 16px; border-radius: 8px; text-decoration: none; }
+.skip-link:focus { top: 12px; }
+
+/* clear keyboard focus */
+:focus-visible { outline: 3px solid #00FF66; outline-offset: 3px; border-radius: 6px; }
+#features :focus-visible, #library :focus-visible, #deployment :focus-visible, #pricing :focus-visible, #contact :focus-visible { outline-color: #007F35; }
+
+/* respect "reduce motion" */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cursor { animation: none; }
+  *, *::before, *::after { transition: none !important; }
+}
+
+/* smallest text at least ~13px */
+.tag, .byoi { font-size: 0.8rem; }
+.price-pre, .cfg-est, .cfg-row .help { font-size: 0.82rem; }
+.cfg-note { font-size: 0.84rem; }
+
+/* preview banner (not part of the design) */
+.preview-banner { background: #FFF4D6; color: #7A5200; font: 600 0.88rem Inter, sans-serif; text-align: center; padding: 10px 16px; }
+.preview-banner a { color: #7A5200; }
