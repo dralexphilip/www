@@ -17,6 +17,12 @@
      backgrounds only: on white it's ~1.35:1 contrast. #007F35 is ~5:1 on white. */
   --green-on-light: #007F35;
   --ink: #0B0F19;
+  /* Status colours: functional only (limit warnings, trial ending, errors), never decoration.
+     Green (--neon / --green-on-light) doubles as success. */
+  --warning: #FFB020;           /* on dark */
+  --danger: #FF5C5C;            /* on dark */
+  --warning-on-light: #B45309;
+  --danger-on-light: #C62828;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -75,7 +81,10 @@ img { max-width: 100%; display: block; }
 .nav-links a::after { content: ' ]'; color: var(--slate); }
 .nav-links a:hover { color: var(--white); }
 .nav-links a:hover::before, .nav-links a:hover::after { color: var(--neon); }
-.nav-actions { display: flex; align-items: center; gap: 12px; }
+.nav-actions { display: flex; align-items: center; gap: 16px; }
+.nav-login { color: var(--text); text-decoration: none; font-size: 0.92rem; font-weight: 600; cursor: pointer; }
+.nav-login:hover { color: var(--white); }
+.nav-links .nav-mobile-only { display: none; }
 .nav-toggle {
   display: none; background: none; border: 1px solid var(--line-strong); border-radius: 8px;
   color: var(--white); width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem;
@@ -233,7 +242,8 @@ img { max-width: 100%; display: block; }
   .section { padding: 72px 0; }
   .hero { padding: 64px 0 48px; }
   .container { padding: 0 16px; }
-  .nav-actions .btn { display: none; }
+  .nav-login { display: none; }
+  .nav-links .nav-mobile-only { display: block; }
   .form-row { grid-template-columns: 1fr; }
   .card { padding: 24px; }
   .app-actions .row { flex-direction: column; }
@@ -325,6 +335,8 @@ img { max-width: 100%; display: block; }
     .cfg-backdrop { padding: 0; }
     .cfg { border-radius: 0; min-height: 100vh; }
     .cfg-head, .cfg-form, .cfg-sum { padding-left: 16px; padding-right: 16px; }
-    .cfg-row input[type=number], .cfg-row select { width: 110px; }
+    /* phones: rows with a dropdown or number field stack, so values aren't cut off */
+    .cfg-row:has(select), .cfg-row:has(input[type=number]) { grid-template-columns: 1fr; gap: 8px; }
+    .cfg-row input[type=number], .cfg-row select { width: 100%; }
   }
 .deploy-box .fee a { color: var(--neon); }

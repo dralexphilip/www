@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://goqodon.com/sitemap.xml

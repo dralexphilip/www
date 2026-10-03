@@ -6,11 +6,21 @@
   <title>qodon | Build software at the speed of thought</title>
   <meta name="description" content="qodon is the AI-native no-code engine that turns plain-language requirements into secure, governed enterprise applications. Start from the App Library: CTMS, IPM and QMS.">
   <meta name="theme-color" content="#0B0F19">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="images/brand/qodon-q-tile.svg">
+  <link rel="apple-touch-icon" href="images/brand/apple-touch-icon.png">
   <meta property="og:title" content="qodon | Build software at the speed of thought">
   <meta property="og:description" content="AI-native no-code platform and enterprise engine. Explore the App Library: CTMS, IPM, QMS.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://goqodon.com/">
+  <!-- link preview card (LinkedIn, Slack, WhatsApp, Teams…). Must be an absolute URL. -->
+  <meta property="og:image" content="https://goqodon.com/images/brand/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="qodon: Build software at the speed of thought. AI-native no-code platform with CTMS, IPM and QMS apps.">
+  <meta property="og:site_name" content="qodon">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://goqodon.com/images/brand/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@700&display=swap">
@@ -36,11 +46,12 @@
           <li><a href="#deployment">Infrastructure</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li class="nav-mobile-only"><a data-link="login">Log in</a></li>
         </ul>
       </nav>
       <div class="nav-actions">
-        <!-- TODO: real app URL -->
-        <a href="#" class="btn btn-neon btn-pill btn-sm" target="_blank" rel="noopener">Launch App <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.9A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></svg></a>
+        <a data-link="login" class="nav-login">Log in</a>
+        <a data-link="signup" class="btn btn-neon btn-pill btn-sm">Start free</a>
         <button class="nav-toggle" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">☰</button>
       </div>
     </div>
@@ -56,8 +67,7 @@
           <h1><span class="hash">#</span>Build software at the speed of thought.</h1>
           <p class="lead">The AI-native development engine that turns plain-language requirements into secure, full-stack enterprise applications, with roles, audit trails and tenants already in place. No complex setup.</p>
           <div class="hero-actions">
-            <!-- TODO: real sign-up URL -->
-            <a href="#" class="btn btn-neon btn-lg">Start Building Free</a>
+            <a data-link="signup" class="btn btn-neon btn-lg">Start Building Free</a>
             <a href="#library" class="btn btn-outline btn-lg">Explore App Library</a>
           </div>
         </div>
@@ -139,13 +149,8 @@
               <li>Role-based access with full audit trail</li>
             </ul>
             <div class="app-actions">
-              <!-- TODO: CTMS demo URL -->
-              <a href="#" class="btn btn-neon" target="_blank" rel="noopener">Live Demo</a>
-              <div class="row">
-                <!-- TODO: bundle + cloud deploy URLs -->
-                <a href="#" class="btn btn-outline btn-sm">Download Bundle</a>
-                <a href="#" class="btn btn-outline btn-sm">Deploy to Cloud</a>
-              </div>
+              <a data-link="demo:ctms" class="btn btn-neon" target="_blank" rel="noopener">Live demo</a>
+              <a data-link="use:ctms" class="btn btn-outline">Use this app</a>
             </div>
           </article>
 
@@ -160,12 +165,8 @@
               <li>Portfolio dashboards and AI-assisted review</li>
             </ul>
             <div class="app-actions">
-              <!-- TODO: IPM demo URL -->
-              <a href="#" class="btn btn-neon" target="_blank" rel="noopener">Live Demo</a>
-              <div class="row">
-                <a href="#" class="btn btn-outline btn-sm">Download Bundle</a>
-                <a href="#" class="btn btn-outline btn-sm">Deploy to Cloud</a>
-              </div>
+              <a data-link="demo:ipm" class="btn btn-neon" target="_blank" rel="noopener">Live demo</a>
+              <a data-link="use:ipm" class="btn btn-outline">Use this app</a>
             </div>
           </article>
 
@@ -180,12 +181,8 @@
               <li>SOP versioning and training records</li>
             </ul>
             <div class="app-actions">
-              <!-- TODO: QMS demo URL -->
-              <a href="#" class="btn btn-neon" target="_blank" rel="noopener">Live Demo</a>
-              <div class="row">
-                <a href="#" class="btn btn-outline btn-sm">Download Bundle</a>
-                <a href="#" class="btn btn-outline btn-sm">Deploy to Cloud</a>
-              </div>
+              <a data-link="demo:qms" class="btn btn-neon" target="_blank" rel="noopener">Live demo</a>
+              <a data-link="use:qms" class="btn btn-outline">Use this app</a>
             </div>
           </article>
 
@@ -247,7 +244,7 @@
               <li>No connection to qodon required</li>
               <li>Community support and docs</li>
             </ul>
-            <a href="#" class="btn btn-outline">Get Codebase</a>
+            <a data-link="codebase" class="btn btn-outline">Get Codebase</a>
           </div>
 
           <!-- Builder only -->
@@ -287,8 +284,7 @@
         <div class="trial">
           <span class="tag">Free trial</span>
           <p><b>New accounts get $100 of qodon Cloud credit</b> to deploy and test an app free for 30 days. No card needed. Choose a plan and pay only when you deploy for real.</p>
-          <!-- TODO: sign-up URL -->
-          <a href="#" class="btn btn-neon btn-sm">Start free</a>
+          <a data-link="signup" class="btn btn-neon btn-sm">Start free</a>
         </div>
 
         <!-- Private Platform line -->
@@ -487,6 +483,36 @@
   </footer>
 
   <script>
+    // ---- platform links: fill these in when the platform pages exist. Empty = not live yet. ----
+    var LINKS = {
+      login: '',                         // e.g. https://app.goqodon.com/login
+      signup: '',                        // e.g. https://app.goqodon.com/signup
+      codebase: '',                      // open-source engine download / repository
+      demo: { ctms: '', ipm: '', qms: '' }
+    };
+    // signup?start=<app> starts from a library app; signup?plan=<builder|hosted>&config=<base64 JSON> carries the configurator setup
+    function platformLink(kind, arg, config) {
+      if (kind === 'demo') return LINKS.demo[arg] || '';
+      if (!LINKS[kind] && kind !== 'use' && kind !== 'plan') return '';
+      if (kind === 'use') return LINKS.signup ? LINKS.signup + '?start=' + encodeURIComponent(arg) : '';
+      if (kind === 'plan') return LINKS.signup ? LINKS.signup + '?plan=' + encodeURIComponent(arg) +
+        '&config=' + encodeURIComponent(btoa(JSON.stringify(config || {}))) : '';
+      return LINKS[kind];
+    }
+    function setLink(el, url) {
+      if (url) { el.href = url; el.removeAttribute('aria-disabled'); el.removeAttribute('title'); }
+      else { el.href = '#'; el.setAttribute('aria-disabled', 'true'); el.title = 'Coming soon'; }
+    }
+    document.querySelectorAll('[data-link]').forEach(function (el) {
+      var p = el.dataset.link.split(':');
+      setLink(el, platformLink(p[0], p[1]));
+    });
+    // links that aren't live yet do nothing instead of jumping to the top
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a[aria-disabled="true"]');
+      if (a) e.preventDefault();
+    });
+
     // mobile menu
     (function () {
       var btn = document.querySelector('.nav-toggle');
@@ -604,6 +630,9 @@
       }).join('');
       $('cfgTotal').innerHTML = money(Math.round(t.sum)) + ' <small>/ mo</small>';
       $('cfgAnnual').textContent = 'or ' + money(Math.round(t.sum) * 10) + ' / yr billed annually (2 months free)';
+      var cfg = {};
+      Object.keys(DEFAULTS[mode]).forEach(function (k) { var el = $(k); cfg[k.slice(2)] = el.type === 'checkbox' ? el.checked : el.value; });
+      setLink($('cfgGo'), platformLink('plan', mode, cfg));
     }
 
     function setValues(vals) {
@@ -613,7 +642,10 @@
       });
     }
 
+    var opener = null;   // button that opened the configurator, refocused on close
+
     function open(m) {
+      opener = document.activeElement;
       mode = m;
       setValues(DEFAULTS[m]);
       $('cfgTitle').textContent = TEXT[m].title;
@@ -625,7 +657,12 @@
       render();
       $('cfgClose').focus();
     }
-    function close() { $('cfg').classList.remove('open'); document.body.style.overflow = ''; }
+    function close() {
+      if (!$('cfg').classList.contains('open')) return;
+      $('cfg').classList.remove('open');
+      document.body.style.overflow = '';
+      if (opener && opener.focus) opener.focus();
+    }
 
     document.querySelectorAll('#cfgForm input, #cfgForm select').forEach(function (el) {
       el.addEventListener('input', render); el.addEventListener('change', render);
@@ -633,7 +670,19 @@
     document.querySelectorAll('[data-open]').forEach(function (b) { b.addEventListener('click', function () { open(b.dataset.open); }); });
     $('cfgClose').addEventListener('click', close);
     $('cfg').addEventListener('click', function (e) { if (e.target === this) close(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    document.addEventListener('keydown', function (e) {
+      if (!$('cfg').classList.contains('open')) return;
+      if (e.key === 'Escape') { close(); return; }
+      if (e.key !== 'Tab') return;
+      // keep Tab inside the open configurator
+      var f = Array.prototype.filter.call(
+        $('cfg').querySelectorAll('a[href], button, input, select, textarea'),
+        function (el) { return !el.disabled && el.offsetParent !== null; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
     $('cfgReset').addEventListener('click', function () { setValues(DEFAULTS[mode]); render(); });
 
     // "from" prices on the cards come from the defaults
