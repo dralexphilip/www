@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Page not found | qodon</title>
+  <meta name="theme-color" content="#0B0F19">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="/images/brand/qodon-q-tile.svg">
+  <link rel="stylesheet" href="/fonts.css">
+  <!-- absolute paths: a 404 page can be served from any URL depth -->
+  <link rel="stylesheet" href="/qodon.css">
+  <style>
+    .nf { min-height: calc(100vh - 160px); display: grid; place-items: center; text-align: center; padding: 64px 16px; }
+    .nf .code { font-family: ui-monospace, Consolas, monospace; color: var(--neon); font-size: 0.95rem; margin-bottom: 18px; }
+    .nf h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 14px; }
+    .nf p { max-width: 520px; margin: 0 auto 30px; font-size: 1.05rem; }
+    .nf .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="/" class="wordmark" aria-label="qodon home"><img src="/images/brand/qodon-wordmark.svg" alt="qodon"></a>
+      <a href="/" class="btn btn-outline btn-sm">Back to home</a>
+    </div>
+  </header>
+
+  <main class="nf">
+    <div>
+      <div class="code">qodon&gt; 404 · page not found</div>
+      <h1>This page doesn't exist.</h1>
+      <p>The link may be old, or the address mistyped. Everything about qodon starts from the home page.</p>
+      <div class="actions">
+        <a href="/" class="btn btn-neon">Go to the home page</a>
+        <a href="/#contact" class="btn btn-outline">Contact us</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
+      <span>© 2026 qodon · goqodon.com</span>
+      <a href="mailto:info@goqodon.com">info@goqodon.com</a>
+    </div>
+  </footer>
+</body>
+</html>

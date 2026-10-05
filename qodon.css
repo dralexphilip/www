@@ -3,9 +3,9 @@
   --bg: #0B0F19;            /* Deep Space Gray */
   --surface: #121A2A;
   --surface-2: #161F30;
-  --neon: #00FF66;          /* Electric Cyber Neon */
-  --neon-soft: rgba(0, 255, 102, 0.12);
-  --neon-glow: rgba(0, 255, 102, 0.28);
+  --neon: #00E5FF;          /* Electric cyan (primary accent) */
+  --neon-soft: rgba(0, 229, 255, 0.12);
+  --neon-glow: rgba(0, 229, 255, 0.28);
   --white: #FFFFFF;         /* Stark White */
   --slate: #64748B;         /* Muted Steel Slate */
   --text: #A3B0C2;          /* body copy: slate lifted for contrast on dark */
@@ -13,12 +13,19 @@
   --line-strong: rgba(100, 116, 139, 0.35);
   --radius: 12px;
   --max: 1200px;
-  /* For white / light backgrounds (emails, PDFs, docs, light UI). Neon #00FF66 is for dark
-     backgrounds only: on white it's ~1.35:1 contrast. #007F35 is ~5:1 on white. */
-  --green-on-light: #007F35;
+  /* For white / light backgrounds (emails, PDFs, docs, light UI). Neon cyan #00E5FF is for dark
+     backgrounds only: on white it's ~1.5:1 contrast. Teal #0E7490 is ~5:1 on white. */
+  --accent-on-light: #0E7490;
+  --green-on-light: #0E7490;    /* legacy name, same value as --accent-on-light */
+  /* Secondary colours with fixed roles (app-library industries, charts, campaigns); never the main accent. */
+  --accent-lime: #C6FF00;
+  --accent-lime-on-light: #4D7C0F;
+  --accent-violet: #9D8CFF;
+  --accent-violet-on-light: #5B3FD9;
   --ink: #0B0F19;
-  /* Status colours: functional only (limit warnings, trial ending, errors), never decoration.
-     Green (--neon / --green-on-light) doubles as success. */
+  /* Status colours: functional only (success, limit warnings, trial ending, errors), never decoration. */
+  --success: #3DDC84;           /* on dark */
+  --success-on-light: #067647;
   --warning: #FFB020;           /* on dark */
   --danger: #FF5C5C;            /* on dark */
   --warning-on-light: #B45309;
@@ -54,7 +61,7 @@ img { max-width: 100%; display: block; }
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
 }
 .btn-neon { background: var(--neon); color: var(--bg); box-shadow: 0 0 18px var(--neon-glow); }
-.btn-neon:hover { transform: translateY(-2px); box-shadow: 0 0 28px rgba(0, 255, 102, 0.45); }
+.btn-neon:hover { transform: translateY(-2px); box-shadow: 0 0 28px rgba(0, 229, 255, 0.45); }
 .btn-outline { border-color: var(--line-strong); color: var(--white); background: transparent; }
 .btn-outline:hover { border-color: var(--white); background: rgba(255, 255, 255, 0.04); }
 .btn-neon-outline { border-color: var(--neon); color: var(--neon); background: transparent; }
@@ -94,7 +101,7 @@ img { max-width: 100%; display: block; }
 .hero { padding: 96px 0 72px; position: relative; }
 .hero::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(600px 300px at 75% 30%, rgba(0, 255, 102, 0.08), transparent 70%);
+  background: radial-gradient(600px 300px at 75% 30%, rgba(0, 229, 255, 0.08), transparent 70%);
 }
 .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; position: relative; }
 .eyebrow {
@@ -152,7 +159,7 @@ img { max-width: 100%; display: block; }
   content: ''; position: absolute; left: 0; right: 0; top: 0; height: 2px;
   background: linear-gradient(90deg, transparent, var(--neon), transparent); opacity: 0; transition: opacity .2s ease;
 }
-.app-card:hover { transform: translateY(-3px); border-color: rgba(0, 255, 102, 0.35); }
+.app-card:hover { transform: translateY(-3px); border-color: rgba(0, 229, 255, 0.35); }
 .app-card:hover::after { opacity: 1; }
 .app-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
 .app-code { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--white); letter-spacing: 0.04em; }
@@ -183,7 +190,7 @@ img { max-width: 100%; display: block; }
 
 /* ---------- pricing ---------- */
 .price-card { display: flex; flex-direction: column; }
-.price-card.featured { border-color: var(--neon); box-shadow: 0 0 0 1px var(--neon), 0 0 40px rgba(0, 255, 102, 0.12); position: relative; }
+.price-card.featured { border-color: var(--neon); box-shadow: 0 0 0 1px var(--neon), 0 0 40px rgba(0, 229, 255, 0.12); position: relative; }
 .price-card.featured .tag { position: absolute; top: -12px; left: 32px; background: var(--neon); color: var(--bg); }
 .price-name { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); margin-bottom: 14px; }
 .price { font-size: 2.6rem; font-weight: 800; color: var(--white); letter-spacing: -0.03em; line-height: 1; }
@@ -219,6 +226,15 @@ img { max-width: 100%; display: block; }
 .footer-links { display: flex; gap: 22px; list-style: none; }
 .footer-links a { color: var(--text); text-decoration: none; }
 .footer-links a:hover { color: var(--white); }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 32px; }
+.footer-brand p { margin-top: 12px; max-width: 280px; }
+.footer-col h4 { color: var(--white); font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; }
+.footer-col a { display: block; color: var(--text); text-decoration: none; padding: 4px 0; cursor: pointer; }
+.footer-col a:hover { color: var(--white); }
+.footer-bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line); }
+.footer-bottom a { color: var(--text); text-decoration: none; }
+.footer-bottom a:hover { color: var(--white); }
+@media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-brand { grid-column: 1 / -1; } }
 
 /* ---------- responsive ---------- */
 @media (max-width: 1080px) {
@@ -277,7 +293,7 @@ img { max-width: 100%; display: block; }
   .services-list span { font-size: 0.85rem; }
   .services .btn { justify-self: start; }
 
-  .trial { margin-top: 24px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; padding: 18px 24px; border: 1px solid rgba(0, 255, 102, 0.35); border-radius: var(--radius); background: var(--neon-soft); }
+  .trial { margin-top: 24px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; padding: 18px 24px; border: 1px solid rgba(0, 229, 255, 0.35); border-radius: var(--radius); background: var(--neon-soft); }
   .trial p { flex: 1; min-width: 260px; color: var(--text); }
   .trial b { color: var(--white); }
   .cfg-est { font-size: 0.78rem; color: var(--slate); margin-bottom: 8px; }
