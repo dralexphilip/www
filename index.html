@@ -10,7 +10,7 @@
   <link rel="icon" type="image/svg+xml" href="images/brand/qodon-q-tile.svg">
   <link rel="apple-touch-icon" href="images/brand/apple-touch-icon.png">
   <meta property="og:title" content="qodon | Build software at the speed of thought">
-  <meta property="og:description" content="Build business apps without code, deploy to your own cloud or ours, and pay per app, not per seat. Start free.">
+  <meta property="og:description" content="Build business apps without code, deploy to your own cloud or ours, and pay only for what runs, not per seat. Start free.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://goqodon.com/">
   <!-- link preview card (LinkedIn, Slack, WhatsApp, Teams…). Must be an absolute URL. -->
@@ -231,13 +231,13 @@
             <span class="tag">Fully managed</span>
             <h3>qodon Cloud</h3>
             <p>We host and maintain your app. Choose single box or separate services and size each part. Upgrades, security patches, backups, monitoring and AWS Secrets Manager are included.</p>
-            <div class="fee"><strong>Pricing:</strong> Builder + Hosting from $394 / mo per app. <a href="#pricing">See pricing</a></div>
+            <div class="fee"><strong>Pricing:</strong> from <span data-price="env_single_box_s">$80.19</span> / mo per environment, paid from a prepaid balance. <a href="#pricing">See pricing</a></div>
           </div>
           <div class="card deploy-box">
             <span class="tag tag-slate">BYOI</span>
             <h3>Your own infrastructure</h3>
-            <p>Run the open-source engine on your own servers, or build on our online platform and deploy into your own AWS account. It stays under your control.</p>
-            <div class="fee"><strong>Pricing:</strong> free, or Builder from $199 / mo per app.</div>
+            <p>Run the open-source engine on your own servers, or have us move the whole qodon platform into your own AWS account. It stays under your control.</p>
+            <div class="fee"><strong>Pricing:</strong> free to self-host, or <span data-price="byoi_deployment">$4,900</span> one-time for the whole platform in your AWS.</div>
           </div>
         </div>
       </div>
@@ -249,11 +249,11 @@
         <div class="section-head">
           <span class="kicker">Pricing</span>
           <h2>Start free. Pay only for what you use.</h2>
-          <p>Run qodon on your own infrastructure for free, use our online builder and deploy to your own AWS, or let us host and maintain everything. Configure exactly what you need and see the price straight away.</p>
+          <p>Self-host qodon for free, or build on qodon Cloud and pay from a prepaid balance only for what runs: environments, tenants and, if you want one, a platform of your own. Configure what you need and see the price straight away.</p>
           <div class="promise">
             <span>Free to start</span>
             <span>No per-seat fees</span>
-            <span>Cancel any month</span>
+            <span>Prepaid, no contract</span>
             <span>Export your app anytime</span>
           </div>
         </div>
@@ -274,43 +274,42 @@
             <a data-link="codebase" class="btn btn-outline">Get Codebase</a>
           </div>
 
-          <!-- Builder only -->
-          <div class="card price-card">
-            <div class="price-name">Builder <span class="byoi">BYOI</span></div>
-            <div class="price-pre">from</div>
-            <div class="price"><span id="fromBuilder">$199</span> <small>/ mo per live app</small></div>
-            <p class="price-desc">Build on our online platform and deploy to your own AWS.</p>
-            <ul class="ticks">
-              <li>Online visual and AI-assisted builder</li>
-              <li>CTMS, IPM and QMS library apps as starting points</li>
-              <li>One-click deploy into your AWS: single box or separate services</li>
-              <li>Your app's design kept safe and versioned in the qodon library</li>
-              <li>Email support</li>
-            </ul>
-            <button type="button" class="btn btn-outline" data-open="builder">Configure &amp; see price</button>
-          </div>
-
-          <!-- Builder + Hosting -->
+          <!-- qodon Cloud: pay as you go from a prepaid balance -->
           <div class="card price-card featured">
             <span class="tag">Fully managed</span>
-            <div class="price-name">Builder + Hosting</div>
+            <div class="price-name">qodon Cloud</div>
             <div class="price-pre">from</div>
-            <div class="price"><span id="fromHosted">$394</span> <small>/ mo per live app</small></div>
-            <p class="price-desc">We host and maintain your app on qodon Cloud. You choose the services.</p>
+            <div class="price"><span data-price="env_single_box_s">$80.19</span> <small>/ mo per environment</small></div>
+            <p class="price-desc">Build online for free. Pay from a prepaid balance only for what runs.</p>
             <ul class="ticks">
-              <li>Everything in Builder</li>
-              <li>Choose single box or separate services, and size each service</li>
-              <li>Upgrades, security patches and monitoring by us</li>
-              <li>Secrets kept in AWS Secrets Manager</li>
-              <li>SSL and custom domain included</li>
+              <li>Online visual and AI-assisted builder, free</li>
+              <li>CTMS and IPM library apps, ready to use</li>
+              <li>Environments sized single box or separate services, charged daily</li>
+              <li>Tenants: <span data-price="tenant_creation">$10</span> to create, <span data-price="tenant_upkeep">$3</span> / mo each</li>
+              <li>Upgrades, security patches, backups and monitoring by us</li>
             </ul>
             <button type="button" class="btn btn-neon" data-open="hosted">Configure &amp; see price</button>
+          </div>
+
+          <!-- A platform of your own on qodon Cloud -->
+          <div class="card price-card">
+            <div class="price-name">Your own platform</div>
+            <div class="price-pre"></div>
+            <div class="price"><span data-price="platform_here">$990</span> <small>/ mo</small></div>
+            <p class="price-desc">A separate qodon platform for a business unit or client, hosted and run by us.</p>
+            <ul class="ticks">
+              <li>Its own builder, App Library, users and sign-in</li>
+              <li>Unlimited apps, kept apart from your other platforms</li>
+              <li>Its environments and tenants priced as on qodon Cloud</li>
+              <li>Upgrades, security patches and monitoring by us</li>
+            </ul>
+            <button type="button" class="btn btn-outline" data-open="platform">Configure &amp; see price</button>
           </div>
         </div>
 
         <div class="trial">
           <span class="tag">Free trial</span>
-          <p><b>New accounts get $100 of qodon Cloud credit</b> to deploy and test an app free for 30 days. No card needed. Choose a plan and pay only when you deploy for real.</p>
+          <p><b>New accounts start with $100 on their balance</b> to deploy and test an app. No card needed. Top up when you're ready to run for real.</p>
           <a data-link="signup" class="btn btn-neon btn-sm">Start free</a>
         </div>
 
@@ -322,7 +321,7 @@
             <p>We move the complete qodon platform (builder, library apps and all your apps) into your AWS account, online. You own and run all of it.</p>
           </div>
           <div class="private-price">
-            <div><b>$4,900</b><span>one-time · unlimited apps</span></div>
+            <div><b data-price="byoi_deployment">$4,900</b><span>one-time · unlimited apps</span></div>
             <div><b>$1,490 / yr</b><span>optional maintenance: upgrades, security patches, support</span></div>
           </div>
           <a href="#contact" class="btn btn-outline btn-sm">Talk to us</a>
@@ -347,23 +346,23 @@
           <h3>Questions</h3>
           <details>
             <summary>When do I pay?</summary>
-            <p>Only when you deploy. Sign up and build free. When your app is ready, choose where it runs in the platform's Deployment tab, confirm the price, and pay monthly or annually. Each live app has its own subscription.</p>
+            <p>Only for what runs. Sign up and build free. When your app is ready, you deploy a release to an environment and see its price before you confirm. Charges come from your prepaid balance: one-time items when they happen, and running items (environments, tenants, platforms) a thirtieth of their monthly price each day. Top up whenever you like.</p>
           </details>
           <details>
             <summary>How does the free trial work?</summary>
-            <p>New accounts get $100 of qodon Cloud credit, valid for 30 days, to deploy and test an app on a small single-box setup. We'll remind you before the credit runs out. If you don't choose a plan by then, your app is paused and your data kept for 14 days, so you can pick up where you left off.</p>
+            <p>New accounts start with $100 on their balance, enough to deploy and test an app on a small single-box environment. No card is needed. When the balance runs low you top it up; nothing renews automatically.</p>
           </details>
           <details>
             <summary>What does BYOI mean?</summary>
             <p>Bring Your Own Infrastructure. Your app runs on servers you own, such as your AWS account or your data centre, and you pay that provider directly.</p>
           </details>
           <details>
-            <summary>What am I paying for on the Builder plan?</summary>
-            <p>Use of the online builder, deployments into your AWS (staging and production included), and safe, versioned storage of your app's design (data models, screens, workflows) in the qodon library. Your app and data run in your account, on single box or separate services, whichever you choose.</p>
+            <summary>What is a platform of my own?</summary>
+            <p>A separate qodon platform with its own builder, App Library, users and sign-in, for keeping a business unit or a client apart. On qodon Cloud we host and run it for a monthly price, and its environments and tenants are priced as usual. Or we move a whole platform into your own AWS for a one-time price, and you run it.</p>
           </details>
           <details>
-            <summary>How is Builder + Hosting priced?</summary>
-            <p>Pick a topology. <b>Single box</b> runs everything on one server and costs less. <b>Separate services</b> runs the web server, API and database separately so each can scale. Then size each part: instance or services, database, storage, load balancer. Each item has a clear monthly price, plus managed operations for monitoring, patching and upgrades.</p>
+            <summary>How is qodon Cloud priced?</summary>
+            <p>Each environment has a size. <b>Single box</b> runs everything on one server and costs less. <b>Separate services</b> runs the web server, API and database separately so each can scale. Add-ons such as a load balancer, extra database storage or a custom domain each have a clear monthly price. Tenants and release deployments are priced per item. Every price is shown before you confirm.</p>
           </details>
           <details>
             <summary>What happens if my app grows?</summary>
@@ -375,7 +374,7 @@
           </details>
           <details>
             <summary>Do you charge per user?</summary>
-            <p>No. Pricing is per app and the services it uses. Your whole team can use it.</p>
+            <p>No. You pay for what runs: environments, tenants and platforms. Your whole team can use it.</p>
           </details>
           <details>
             <summary>Does AI write my app's code?</summary>
@@ -391,15 +390,10 @@
         <div class="contact-info">
           <span class="eyebrow"><span class="dot"></span>Contact</span>
           <h2>Tell us what you want to build</h2>
-          <p>Send a short description of your idea or process, or call us. We'll help you get it live. qodon is built on open-source principles, to cut the time and cost of getting to working software.</p>
+          <p>Send a short description of your idea or process. We'll help you get it live. qodon is built on open-source principles, to cut the time and cost of getting to working software.</p>
           <a class="contact-line" href="mailto:info@goqodon.com">
             <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span>
             info@goqodon.com
-          </a>
-          <!-- TODO: real phone number (placeholder carried over from old site) -->
-          <a class="contact-line" href="tel:1112322233">
-            <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
-            111-232-22-33
           </a>
         </div>
         <div class="card">
@@ -440,50 +434,31 @@
       <div class="cfg-body">
         <form class="cfg-form" id="cfgForm" onsubmit="return false">
           <div class="cfg-group">
-            <h4>Your app</h4>
-            <div class="cfg-row"><label for="f_dm">Data models<span class="help">20 included</span></label><input type="number" id="f_dm" min="1" step="1"></div>
-            <div class="cfg-row"><label for="f_sc">Screens (pages)<span class="help">50 included</span></label><input type="number" id="f_sc" min="1" step="1"></div>
-            <div class="cfg-row" data-only="builder"><label for="f_dep">Deployments to your AWS<span class="help">2 included: staging + production</span></label><input type="number" id="f_dep" min="1" step="1"></div>
+            <h4>Environments on qodon Cloud</h4>
+            <div class="cfg-row"><label for="f_envs">Environments<span class="help">For example UAT and production</span></label><input type="number" id="f_envs" min="0" max="20" step="1"></div>
+            <div class="cfg-row"><label for="f_topo">Topology<span class="help">Single box costs less. Separate services scale independently. Can't be changed after the first deployment.</span></label>
+              <select id="f_topo"><option value="single_box">Single box</option><option value="separate">Separate services</option></select></div>
+            <div class="cfg-row"><label for="f_size">Size<span class="help">S suits testing and small teams; M and L carry more users and data</span></label>
+              <select id="f_size"><option value="s">S</option><option value="m">M</option><option value="l">L</option></select></div>
+            <div class="cfg-row" data-topo="single_box"><label for="f_lb">Load balancer<span class="help">Single box S and M (L includes one)</span></label><input type="checkbox" id="f_lb"></div>
+            <div class="cfg-row" data-topo="separate"><label for="f_nat">NAT high availability<span class="help">A second NAT gateway for redundancy</span></label><input type="checkbox" id="f_nat"></div>
+            <div class="cfg-row" data-topo="separate"><label for="f_docdb">Extra database instances<span class="help">Read replica or failover copy</span></label><input type="number" id="f_docdb" min="0" max="3" step="1"></div>
+            <div class="cfg-row"><label for="f_dbgb">Extra database storage (GB)<span class="help">Per environment, in 10 GB steps</span></label><input type="number" id="f_dbgb" min="0" step="10"></div>
+            <div class="cfg-row"><label for="f_domain">Custom domain<span class="help">Your own address with its certificate</span></label><input type="checkbox" id="f_domain"></div>
+            <div class="cfg-row"><label for="f_test">Test platform<span class="help">A second, isolated platform tenant in the same environment</span></label><input type="checkbox" id="f_test"></div>
           </div>
 
-          <div class="cfg-group" data-only="hosted">
-            <h4>Deployment on qodon Cloud</h4>
-            <div class="cfg-row"><label for="f_topo">Topology<span class="help">Single box costs less. Separate services scale independently. Can't be changed after the first deployment.</span></label>
-              <select id="f_topo"><option value="single_box">Single box</option><option value="separate_services">Separate services</option></select></div>
-
-            <!-- single box -->
-            <div class="cfg-row" data-topo="single_box"><label for="f_inst">Instance type<span class="help">Runs web, API, database and files on one server</span></label>
-              <select id="f_inst"><option value="t3.small">t3.small · 2 GB</option><option value="t3.medium">t3.medium · 4 GB</option><option value="t3.large">t3.large · 8 GB</option><option value="t3.xlarge">t3.xlarge · 16 GB</option></select></div>
-            <div class="cfg-row" data-topo="single_box"><label for="f_vol">Data volume (GB)<span class="help">Database and files share this disk</span></label><input type="number" id="f_vol" min="4" step="5"></div>
-            <div class="cfg-row" data-topo="single_box"><label for="f_lb">Load balancer + SSL<span class="help">Needed for your own domain; managed TLS and health checks</span></label><input type="checkbox" id="f_lb"></div>
-            <div class="cfg-row" data-topo="single_box"><label for="f_protect">Protect data<span class="help">Daily snapshots kept 30 days instead of 7</span></label><input type="checkbox" id="f_protect"></div>
-            <div class="cfg-row" data-topo="single_box"><label for="f_sec">Secrets storage<span class="help">AWS Secrets Manager is recommended. With local files, passwords and keys are stored encrypted on the server's own disk.</span></label>
-              <select id="f_sec"><option value="aws">Secrets Manager</option><option value="local">Local files</option></select></div>
-
-            <!-- separate services -->
-            <div class="cfg-row" data-topo="separate_services"><label for="f_web">Web server<span class="help">Serves your app's screens</span></label>
-              <select id="f_web"><option value="256">256 CPU · 512 MB</option><option value="512">512 CPU · 1 GB</option><option value="1024">1024 CPU · 2 GB</option><option value="2048">2048 CPU · 4 GB</option></select></div>
-            <div class="cfg-row" data-topo="separate_services"><label for="f_api">API services<span class="help">Runs your app's logic and workflows</span></label>
-              <select id="f_api"><option value="256">256 CPU · 512 MB</option><option value="512">512 CPU · 1 GB</option><option value="1024">1024 CPU · 2 GB</option><option value="2048">2048 CPU · 4 GB</option></select></div>
-            <div class="cfg-row" data-topo="separate_services"><label for="f_dbc">Database instance class</label>
-              <select id="f_dbc"><option value="db.t3.medium">db.t3.medium</option><option value="db.r6g.large">db.r6g.large</option></select></div>
-            <div class="cfg-row" data-topo="separate_services"><label for="f_dbn">Database instances<span class="help">2 or more for a standby copy</span></label><input type="number" id="f_dbn" min="1" max="3" step="1"></div>
-            <div class="cfg-row" data-topo="separate_services"><label for="f_dbgb">Database storage (GB)</label><input type="number" id="f_dbgb" min="1" step="5"></div>
-            <div class="cfg-row" data-topo="separate_services"><label for="f_s3">File storage (GB)<span class="help">Documents and attachments</span></label><input type="number" id="f_s3" min="0" step="10"></div>
-            <div class="cfg-row" data-topo="separate_services"><label for="f_sec2">Secrets storage<span class="help">Required for separate services</span></label>
-              <select id="f_sec2" disabled><option>Secrets Manager</option></select></div>
-            <div class="cfg-row" data-topo="separate_services"><label for="f_nat">NAT high availability<span class="help">A second NAT gateway for redundancy</span></label><input type="checkbox" id="f_nat"></div>
-
-            <!-- both -->
-            <div class="cfg-row"><label for="f_test">Test platform<span class="help">A test copy inside the same deployment</span></label><input type="checkbox" id="f_test"></div>
-            <div class="cfg-row"><label for="f_stg">Staging deployment<span class="help">A separate small single box for staging</span></label><input type="checkbox" id="f_stg"></div>
-            <div class="cfg-row"><label for="f_tx">Data downloaded per month (GB)<span class="help">50 GB included</span></label><input type="number" id="f_tx" min="0" step="10"></div>
+          <div class="cfg-group">
+            <h4>Tenants and more</h4>
+            <div class="cfg-row"><label for="f_tenants">Tenants<span class="help">Customers or sites, each with its own data</span></label><input type="number" id="f_tenants" min="0" step="1"></div>
+            <div class="cfg-row"><label for="f_platform">A platform of your own<span class="help">Its own builder, library, users and sign-in, run by us</span></label><input type="checkbox" id="f_platform"></div>
+            <div class="cfg-row"><label for="f_support">Priority support</label><input type="checkbox" id="f_support"></div>
           </div>
         </form>
 
         <div class="cfg-sum">
           <h4>Monthly estimate</h4>
-          <p class="cfg-est">You confirm and pay in the platform when you deploy. Trial credits apply first.</p>
+          <p class="cfg-est">Paid from your prepaid balance: every price is shown in the platform before you confirm. New accounts start with $100.</p>
           <div class="cfg-lines" id="cfgLines"></div>
           <div class="cfg-total">
             <div class="big" id="cfgTotal">$0 <small>/ mo</small></div>
@@ -521,9 +496,9 @@
       </nav>
       <nav class="footer-col" aria-label="Legal">
         <h4>Legal</h4>
-        <!-- TODO: legal pages -->
-        <a href="#">Terms and Conditions</a>
-        <a href="#">Privacy Policy</a>
+        <!-- The platform's own, from its branding (Tenants › platform › Branding). -->
+        <a href="https://platform.goqodon.com/terms">Terms and Conditions</a>
+        <a href="https://platform.goqodon.com/privacy">Privacy Policy</a>
       </nav>
     </div>
     <div class="container footer-bottom">
@@ -535,11 +510,14 @@
   <script>
     // ---- platform links: fill these in when the platform pages exist. Empty = not live yet. ----
     var LINKS = {
-      login: '',                         // e.g. https://platform.goqodon.com/login
-      signup: '',                        // e.g. https://console.goqodon.com/signup
+      login: 'https://platform.goqodon.com/login',
+      signup: 'https://platform.goqodon.com/register',
       codebase: '',                      // open-source engine download / repository
       demo: { ctms: '', ipm: '', qms: '' }
     };
+    // The prices (the Console's public price book; ?pricebook=<url> to try another). Until it
+    // answers, and if it can't, the figures written in the page stand.
+    var PRICE_BOOK = (new URLSearchParams(location.search)).get('pricebook') || 'https://console.goqodon.com/api/price-book';
     // signup?start=<app> starts from a library app; signup?plan=<builder|hosted>&config=<base64 JSON> carries the configurator setup
     function platformLink(kind, arg, config) {
       if (kind === 'demo') return LINKS.demo[arg] || '';
@@ -640,123 +618,89 @@
       window.location.href = 'mailto:info@goqodon.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     });
 
-    // pricing configurator
+    // pricing configurator: the Console's rate card, by item key (cents). These are the
+    // figures until the price book answers.
     (function () {
-    // ---- price book (edit here). Hosting items ≈ AWS cost ÷ 0.4 (60% margin) ----
     var P = {
-      base: 199, dmIncl: 20, dm: 4, scIncl: 50, sc: 1, depIncl: 2, dep: 29,
-      // single box
-      inst: { 't3.small': 39, 't3.medium': 79, 't3.large': 149, 't3.xlarge': 299 },
-      volGb: 0.20, protectGb: 0.16, lb: 55, secAws: 5, opsSingle: 49,
-      // separate services
-      svc: { 256: 25, 512: 45, 1024: 89, 2048: 179 },
-      dbc: { 'db.t3.medium': 149, 'db.r6g.large': 499 }, dbGb: 0.25, s3Gb: 0.10,
-      netSep: 224, nat: 79, opsSep: 99,
-      // both
-      stg: 89, txIncl: 50, txGb: 0.25
+      env_single_box_s: 8019, env_single_box_m: 10785, env_single_box_l: 19050,
+      env_separate_s: 41082, env_separate_m: 53433, env_separate_l: 124767,
+      addon_load_balancer: 3283, addon_nat_ha: 4606, addon_docdb_instance: 8618, addon_db_storage: 263,
+      addon_custom_domain: 263, addon_test_platform: 2000, addon_priority_support: 19900,
+      tenant_creation: 1000, tenant_upkeep: 300, release_deployment: 500, custom_domain_setup: 2500,
+      platform_here: 99000, byoi_deployment: 490000
     };
     var DEFAULTS = {
-      builder: { f_dm: 20, f_sc: 50, f_dep: 2 },
-      hosted:  { f_dm: 20, f_sc: 50, f_topo: 'single_box',
-                 f_inst: 't3.medium', f_vol: 20, f_lb: true, f_protect: true, f_sec: 'aws',
-                 f_web: '256', f_api: '512', f_dbc: 'db.t3.medium', f_dbn: 1, f_dbgb: 10, f_s3: 50, f_nat: false,
-                 f_test: false, f_stg: false, f_tx: 50 }
+      hosted:   { f_envs: 2, f_topo: 'single_box', f_size: 's', f_lb: false, f_nat: false, f_docdb: 0, f_dbgb: 0,
+                  f_domain: false, f_test: false, f_tenants: 1, f_platform: false, f_support: false },
+      platform: { f_envs: 2, f_topo: 'single_box', f_size: 's', f_lb: false, f_nat: false, f_docdb: 0, f_dbgb: 0,
+                  f_domain: false, f_test: false, f_tenants: 1, f_platform: true, f_support: false }
     };
     var TEXT = {
-      builder: { title: 'Builder (BYOI)', sub: 'Build online, deploy into your own AWS. Single box or separate services: your choice. Your AWS bill is paid by you directly.',
-                 note: "Priced per app. Includes builder access, your app's design stored and versioned in the qodon library, deployment tooling and email support." },
-      hosted:  { title: 'Builder + Hosting', sub: 'We host and maintain your app on qodon Cloud. Choose the topology and size each service.',
-                 note: 'Priced per app. Monitoring, patching and platform upgrades are included in managed operations.' }
+      hosted:   { title: 'qodon Cloud', sub: 'Build free. Choose your environments and tenants; they run on qodon Cloud and are charged from your prepaid balance.',
+                  note: 'Running items are charged daily, a thirtieth of their monthly price. One-time items are charged when they happen.' },
+      platform: { title: 'Your own platform', sub: 'A separate platform with its own builder, library and users, run by us. Its environments and tenants are priced as on qodon Cloud.',
+                  note: 'The platform, its environments and its tenants each run on qodon Cloud and are each charged.' }
     };
-    var mode = 'builder';
-
+    var mode = 'hosted';
     var $ = function (id) { return document.getElementById(id); };
     var n = function (id) { return Math.max(0, parseFloat($(id).value) || 0); };
     var on = function (id) { return $(id).checked; };
-    var money = function (v) {
-      var r = Math.round(v * 100) / 100;
-      return '$' + (r % 1 ? r.toFixed(2) : r.toLocaleString('en-US'));
+    var money = function (cents) {
+      var v = cents / 100, r = Math.round(v * 100) / 100;
+      return '$' + (r % 1 ? r.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : r.toLocaleString('en-US'));
     };
-    var optText = function (id) { return $(id).selectedOptions[0].text; };
-
-    function builderLines() {
-      var L = [], dm = Math.max(0, n('f_dm') - P.dmIncl), sc = Math.max(0, n('f_sc') - P.scIncl);
-      var dep = mode === 'builder' ? Math.max(0, Math.round(n('f_dep')) - P.depIncl) : 0;
-      L.push(['Builder + library', P.base]);
-      if (dm) L.push([dm + ' extra data models × $' + P.dm, dm * P.dm]);
-      if (sc) L.push([sc + ' extra screens × $' + P.sc, sc * P.sc]);
-      if (dep) L.push([dep + ' extra deployments × $' + P.dep, dep * P.dep]);
-      return L;
-    }
-
-    function hostedLines() {
-      var L = [], tx = Math.max(0, n('f_tx') - P.txIncl);
-      if ($('f_topo').value === 'single_box') {
-        L.push(['Managed operations', P.opsSingle]);
-        L.push(['Instance ' + $('f_inst').value, P.inst[$('f_inst').value]]);
-        L.push(['Data volume ' + n('f_vol') + ' GB', n('f_vol') * P.volGb]);
-        if (on('f_lb')) L.push(['Load balancer + SSL', P.lb]);
-        if (on('f_protect')) L.push(['Daily snapshots kept 30 days', n('f_vol') * P.protectGb]);
-        L.push($('f_sec').value === 'aws' ? ['AWS Secrets Manager', P.secAws] : ['Secrets: local encrypted files on the server', 0]);
-      } else {
-        var dbn = Math.max(1, Math.round(n('f_dbn')));
-        L.push(['Managed operations', P.opsSep]);
-        L.push(['Network: load balancer, SSL, NAT, private endpoints', P.netSep]);
-        L.push(['AWS Secrets Manager (required)', P.secAws]);
-        if (on('f_nat')) L.push(['NAT high availability', P.nat]);
-        L.push(['Web server ' + optText('f_web'), P.svc[$('f_web').value]]);
-        L.push(['API services ' + optText('f_api'), P.svc[$('f_api').value]]);
-        L.push(['Database ' + $('f_dbc').value + ' × ' + dbn, P.dbc[$('f_dbc').value] * dbn]);
-        L.push(['Database storage ' + n('f_dbgb') + ' GB', n('f_dbgb') * P.dbGb]);
-        L.push(['File storage ' + n('f_s3') + ' GB', n('f_s3') * P.s3Gb]);
+    function lines() {
+      var M = [], O = [], envs = Math.round(n('f_envs')), tenants = Math.round(n('f_tenants'));
+      var topo = $('f_topo').value, size = $('f_size').value;
+      var envKey = (topo === 'single_box' ? 'env_single_box_' : 'env_separate_') + size;
+      if (on('f_platform')) M.push(['Platform of your own', P.platform_here]);
+      if (envs) {
+        M.push([envs + ' × environment ' + (topo === 'single_box' ? 'single box ' : 'separate services ') + size.toUpperCase(), envs * P[envKey]]);
+        O.push([envs + ' × release deployment', envs * P.release_deployment]);
+        if (topo === 'single_box' && size !== 'l' && on('f_lb')) M.push([envs + ' × load balancer', envs * P.addon_load_balancer]);
+        if (topo === 'separate' && on('f_nat')) M.push([envs + ' × NAT high availability', envs * P.addon_nat_ha]);
+        var dbi = topo === 'separate' ? Math.round(n('f_docdb')) : 0;
+        if (dbi) M.push([envs * dbi + ' × extra database instance', envs * dbi * P.addon_docdb_instance]);
+        var blocks = Math.ceil(n('f_dbgb') / 10);
+        if (blocks) M.push([envs + ' × ' + blocks * 10 + ' GB extra database storage', envs * blocks * P.addon_db_storage]);
+        if (on('f_domain')) { M.push(['Custom domain', P.addon_custom_domain]); O.push(['Custom domain and certificate setup', P.custom_domain_setup]); }
+        if (on('f_test')) M.push([envs + ' × test platform', envs * P.addon_test_platform]);
       }
-      if (on('f_test')) L.push(['Test platform', 0]);
-      if (on('f_stg')) L.push(['Staging deployment (small single box)', P.stg]);
-      if (tx) L.push([tx + ' GB downloaded over 50 GB', tx * P.txGb]);
-      return L;
+      if (tenants) { M.push([tenants + ' × tenant upkeep', tenants * P.tenant_upkeep]); O.push([tenants + ' × tenant creation', tenants * P.tenant_creation]); }
+      if (on('f_support')) M.push(['Priority support', P.addon_priority_support]);
+      var sum = function (L) { return L.reduce(function (a, l) { return a + l[1]; }, 0); };
+      return { monthly: M, once: O, month: sum(M), now: sum(O) };
     }
-
-    function total(m) {
-      var L = builderLines();
-      if (m === 'hosted') L = L.concat(hostedLines());
-      return { lines: L, sum: L.reduce(function (a, l) { return a + l[1]; }, 0) };
-    }
-
     function showTopo() {
       var t = $('f_topo').value;
       document.querySelectorAll('[data-topo]').forEach(function (el) { el.style.display = el.dataset.topo === t ? '' : 'none'; });
     }
-
     function render() {
       showTopo();
-      var t = total(mode);
-      $('cfgLines').innerHTML = t.lines.map(function (l) {
-        return '<div class="' + (l[1] === 0 ? 'incl' : '') + '"><span>' + l[0] + '</span><b>' + (l[1] === 0 ? 'included' : money(l[1])) + '</b></div>';
-      }).join('');
-      $('cfgTotal').innerHTML = money(Math.round(t.sum)) + ' <small>/ mo</small>';
-      $('cfgAnnual').textContent = 'or ' + money(Math.round(t.sum) * 10) + ' / yr billed annually (2 months free)';
+      var t = lines();
+      var row = function (l) { return '<div><span>' + l[0] + '</span><b>' + money(l[1]) + '</b></div>'; };
+      $('cfgLines').innerHTML = t.monthly.map(row).join('') +
+        (t.once.length ? '<div class="incl"><span>One-time, when it happens</span><b></b></div>' + t.once.map(row).join('') : '');
+      $('cfgTotal').innerHTML = money(t.month) + ' <small>/ mo</small>';
+      $('cfgAnnual').textContent = t.now ? 'plus ' + money(t.now) + ' one-time' : '';
       var cfg = {};
       Object.keys(DEFAULTS[mode]).forEach(function (k) { var el = $(k); cfg[k.slice(2)] = el.type === 'checkbox' ? el.checked : el.value; });
       setLink($('cfgGo'), platformLink('plan', mode, cfg));
     }
-
     function setValues(vals) {
       Object.keys(vals).forEach(function (k) {
         var el = $(k); if (!el) return;
         if (el.type === 'checkbox') el.checked = vals[k]; else el.value = vals[k];
       });
     }
-
     var opener = null;   // button that opened the configurator, refocused on close
-
     function open(m) {
       opener = document.activeElement;
-      mode = m;
-      setValues(DEFAULTS[m]);
-      $('cfgTitle').textContent = TEXT[m].title;
-      $('cfgSub').textContent = TEXT[m].sub;
-      $('cfgNote').textContent = TEXT[m].note;
-      document.querySelectorAll('[data-only]').forEach(function (el) { el.style.display = el.dataset.only === m ? '' : 'none'; });
+      mode = DEFAULTS[m] ? m : 'hosted';
+      setValues(DEFAULTS[mode]);
+      $('cfgTitle').textContent = TEXT[mode].title;
+      $('cfgSub').textContent = TEXT[mode].sub;
+      $('cfgNote').textContent = TEXT[mode].note;
       $('cfg').classList.add('open');
       document.body.style.overflow = 'hidden';
       render();
@@ -768,7 +712,6 @@
       document.body.style.overflow = '';
       if (opener && opener.focus) opener.focus();
     }
-
     document.querySelectorAll('#cfgForm input, #cfgForm select').forEach(function (el) {
       el.addEventListener('input', render); el.addEventListener('change', render);
     });
@@ -789,13 +732,21 @@
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
     $('cfgReset').addEventListener('click', function () { setValues(DEFAULTS[mode]); render(); });
-
-    // "from" prices on the cards come from the defaults
-    (function () {
-      setValues(DEFAULTS.builder); mode = 'builder'; $('fromBuilder').textContent = money(Math.round(total('builder').sum));
-      setValues(DEFAULTS.hosted); mode = 'hosted'; $('fromHosted').textContent = money(Math.round(total('hosted').sum));
-    })();
-  
+    // Prices written in the page ([data-price="<item>"]) and the configurator's, from the price book.
+    function showPrices() {
+      document.querySelectorAll('[data-price]').forEach(function (el) {
+        var c = P[el.dataset.price];
+        if (typeof c === 'number') el.textContent = money(c);
+      });
+    }
+    showPrices();
+    if (PRICE_BOOK && window.fetch) {
+      fetch(PRICE_BOOK).then(function (r) { return r.ok ? r.json() : null; }).then(function (book) {
+        (book && book.items || []).forEach(function (i) { if (i.key && typeof i.price_cents === 'number') P[i.key] = i.price_cents; });
+        showPrices();
+        if ($('cfg').classList.contains('open')) render();
+      }).catch(function () { /* the figures in the page stand */ });
+    }
     })();
   </script>
 </body>
