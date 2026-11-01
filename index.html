@@ -558,22 +558,22 @@
     // ---- role videos: one list per library app (files in videos/). An app without videos shows no poster. ----
     var VIDEOS = {
       ctms: { name: 'Clinical Trial Management', list: [
-        { role: 'Study manager', about: 'Overview, sites and submissions', file: 'ctms-study-manager' },
-        { role: 'CRA', about: 'Monitoring visits, reports, deviations and queries', file: 'ctms-cra' },
-        { role: 'Site coordinator', about: 'Visits due and an adverse event with its MedDRA term', file: 'ctms-site-coordinator' },
-        { role: 'Safety and coding', about: 'Serious events and MedDRA / WHODrug coding', file: 'ctms-safety' }
+        { role: 'Study manager', about: 'Overview, sites and submissions', file: 'ctms-study-manager', time: '0:48' },
+        { role: 'CRA', about: 'Monitoring visits, reports, deviations and queries', file: 'ctms-cra', time: '0:51' },
+        { role: 'Site coordinator', about: 'Visits due and an adverse event with its MedDRA term', file: 'ctms-site-coordinator', time: '1:02' },
+        { role: 'Safety and coding', about: 'Serious events and MedDRA / WHODrug coding', file: 'ctms-safety', time: '0:46' }
       ] },
       ipm: { name: 'Intellectual Property Management', list: [
-        { role: 'IP manager', about: 'Portfolio, family explorer and disclosures', file: 'ipm-ip-manager' },
-        { role: 'Patent attorney', about: 'Worldwide patent search, then a Chinese patent translated by AI, with drawings', file: 'ipm-patent-attorney' },
-        { role: 'Paralegal', about: 'Deadlines, renewal fees and firm invoices', file: 'ipm-paralegal' },
-        { role: 'Law firm', about: 'Firm docket, office actions and time', file: 'ipm-law-firm' }
+        { role: 'IP manager', about: 'Portfolio, family explorer and disclosures', file: 'ipm-ip-manager', time: '0:42' },
+        { role: 'Patent attorney', about: 'Worldwide patent search, then a Chinese patent translated by AI, with drawings', file: 'ipm-patent-attorney', time: '1:33' },
+        { role: 'Paralegal', about: 'Deadlines, renewal fees and firm invoices', file: 'ipm-paralegal', time: '0:47' },
+        { role: 'Law firm', about: 'Firm docket, office actions and time', file: 'ipm-law-firm', time: '0:37' }
       ] },
       clinic: { name: 'Clinic Management', list: [
-        { role: 'Reception', about: 'Arrivals, bookings and billing', file: 'clinic-reception' },
-        { role: 'GP', about: 'My day, the chart, a consultation and a prescription', file: 'clinic-gp' },
-        { role: 'Nurse', about: 'Nurse clinic, vaccines due and allergies', file: 'clinic-nurse' },
-        { role: 'Practice manager', about: 'Practice overview, invoices and staff', file: 'clinic-practice-manager' }
+        { role: 'Reception', about: 'Arrivals, bookings and billing', file: 'clinic-reception', time: '1:12' },
+        { role: 'GP', about: 'My day, the chart, a consultation and a prescription', file: 'clinic-gp', time: '2:18' },
+        { role: 'Nurse', about: 'Nurse clinic, vaccines due and allergies', file: 'clinic-nurse', time: '0:47' },
+        { role: 'Practice manager', about: 'Practice overview, invoices and staff', file: 'clinic-practice-manager', time: '0:50' }
       ] }
     };
     (function () {
@@ -594,9 +594,12 @@
         set.list.forEach(function (v, i) {
           var b = document.createElement('button');
           b.type = 'button'; b.className = 'vid-item'; b.setAttribute('role', 'tab');
-          b.innerHTML = '<img alt="" src="videos/' + v.file + '.jpg"><span><b></b><small></small></span>';
+          b.innerHTML = '<span class="vid-thumb"><img alt="" src="videos/' + v.file + '.jpg"><span class="vid-time"></span></span><span><b></b><small></small></span>';
           b.querySelector('b').textContent = v.role;
           b.querySelector('small').textContent = v.about;
+          var time = b.querySelector('.vid-time');
+          if (v.time) { time.textContent = v.time; b.setAttribute('aria-label', v.role + ', ' + v.time + ': ' + v.about); }
+          else time.remove();
           b.addEventListener('click', function () { play(app, i); });
           listEl.appendChild(b);
         });

@@ -192,6 +192,8 @@ img { max-width: 100%; display: block; }
 .vid-list { display: flex; flex-direction: column; gap: 6px; padding: 12px; border-left: 1px solid var(--line); overflow-y: auto; }
 .vid-item { display: grid; grid-template-columns: 96px 1fr; gap: 10px; align-items: center; text-align: left; padding: 6px; border: 1px solid transparent; border-radius: 10px; background: none; color: var(--text); cursor: pointer; font: inherit; }
 .vid-item img { width: 96px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; }
+.vid-thumb { position: relative; display: block; width: 96px; }
+.vid-time { position: absolute; right: 4px; bottom: 4px; padding: 1px 5px; border-radius: 4px; background: rgba(11, 15, 25, 0.85); color: #FFFFFF; font-size: 0.7rem; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.4; }
 .vid-item b { display: block; color: var(--white); font-size: 0.9rem; }
 .vid-item small { display: block; font-size: 0.76rem; line-height: 1.35; margin-top: 2px; }
 .vid-item:hover { border-color: var(--line-strong); }
