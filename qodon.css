@@ -178,6 +178,29 @@ img { max-width: 100%; display: block; }
 .app-actions .row { display: flex; gap: 10px; }
 .app-actions .row .btn { flex: 1; }
 .library-note { text-align: center; margin-top: 36px; font-size: 0.95rem; }
+/* role video poster on an app card, and the role video dialog (reuses the configurator's dialog) */
+.app-video { position: relative; display: block; width: 100%; margin: 0 0 18px; padding: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--bg); cursor: pointer; }
+.app-video img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; transition: transform .25s ease; }
+.app-video[hidden] { display: none; }
+.app-video:hover img { transform: scale(1.03); }
+.app-video:focus-visible { outline: 2px solid var(--neon); outline-offset: 2px; }
+.app-video-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -60%); width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: var(--neon); color: var(--bg); font-size: 1.2rem; box-shadow: 0 0 18px var(--neon-glow); }
+.app-video-label { position: absolute; left: 0; right: 0; bottom: 0; padding: 8px 12px; font-size: 0.82rem; font-weight: 600; color: #FFFFFF; background: linear-gradient(to top, rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0)); text-align: left; }
+.cfg.vid { max-width: 1200px; }
+.vid-body { display: grid; grid-template-columns: 1fr 280px; gap: 0; }
+.vid-body video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; border-bottom-left-radius: 16px; }
+.vid-list { display: flex; flex-direction: column; gap: 6px; padding: 12px; border-left: 1px solid var(--line); overflow-y: auto; }
+.vid-item { display: grid; grid-template-columns: 96px 1fr; gap: 10px; align-items: center; text-align: left; padding: 6px; border: 1px solid transparent; border-radius: 10px; background: none; color: var(--text); cursor: pointer; font: inherit; }
+.vid-item img { width: 96px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; }
+.vid-item b { display: block; color: var(--white); font-size: 0.9rem; }
+.vid-item small { display: block; font-size: 0.76rem; line-height: 1.35; margin-top: 2px; }
+.vid-item:hover { border-color: var(--line-strong); }
+.vid-item[aria-selected="true"] { border-color: var(--neon); background: var(--neon-soft); }
+@media (max-width: 860px) {
+  .vid-body { grid-template-columns: 1fr; }
+  .vid-body video { border-radius: 0; }
+  .vid-list { border-left: 0; border-top: 1px solid var(--line); }
+}
 .library-note a { color: var(--neon); }
 
 /* ---------- deployment ---------- */

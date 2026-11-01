@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>qodon | No-code platform to build and deploy business apps</title>
-  <meta name="description" content="Build business apps without code, with AI help when you want it. Start from ready-made apps such as clinical trials, IP and quality management, deploy to your own cloud or ours, and pay per app, not per seat.">
+  <meta name="description" content="Build business apps without code, with AI help when you want it. Start from ready-made apps such as clinical trials, IP and clinic management, deploy to your own cloud or ours, and pay per app, not per seat.">
   <meta name="theme-color" content="#0B0F19">
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="images/brand/qodon-q-tile.svg">
@@ -17,7 +17,7 @@
   <meta property="og:image" content="https://goqodon.com/images/brand/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="qodon: Build software at the speed of thought. AI-native no-code platform with CTMS, IPM and QMS apps.">
+  <meta property="og:image:alt" content="qodon: Build software at the speed of thought. AI-native no-code platform with CTMS, IPM and Clinic apps.">
   <meta property="og:site_name" content="qodon">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://goqodon.com/images/brand/og-image.png">
@@ -161,6 +161,7 @@
           <!-- CTMS -->
           <article class="card app-card">
             <div class="app-top"><span class="app-code">CTMS</span><span class="tag">Clinical</span></div>
+            <button type="button" class="app-video" data-videos="ctms" hidden><img alt="" loading="lazy" width="960" height="540"><span class="app-video-play" aria-hidden="true">&#9654;</span><span class="app-video-label"></span></button>
             <h3>Clinical Trial Management</h3>
             <p>Run studies end to end: planning, sites, milestones, compliance checks and cross-border reporting, all in one governed app.</p>
             <ul class="ticks">
@@ -177,6 +178,7 @@
           <!-- IPM -->
           <article class="card app-card">
             <div class="app-top"><span class="app-code">IPM</span><span class="tag">Legal &amp; IP</span></div>
+            <button type="button" class="app-video" data-videos="ipm" hidden><img alt="" loading="lazy" width="960" height="540"><span class="app-video-play" aria-hidden="true">&#9654;</span><span class="app-video-label"></span></button>
             <h3>Intellectual Property Management</h3>
             <p>Manage the patent portfolio in one place: families, prosecution deadlines, renewals, and patent-office document retrieval built into search.</p>
             <ul class="ticks">
@@ -190,19 +192,20 @@
             </div>
           </article>
 
-          <!-- QMS -->
+          <!-- Clinic -->
           <article class="card app-card">
-            <div class="app-top"><span class="app-code">QMS</span><span class="tag">Quality</span></div>
-            <h3>Quality Management System</h3>
-            <p>Keep quality events moving: deviations, CAPA, audits, change control and SOP training, with approval workflows and traceable records.</p>
+            <div class="app-top"><span class="app-code">CLINIC</span><span class="tag">Healthcare</span></div>
+            <button type="button" class="app-video" data-videos="clinic" hidden><img alt="" loading="lazy" width="960" height="540"><span class="app-video-play" aria-hidden="true">&#9654;</span><span class="app-video-label"></span></button>
+            <h3>Clinic Management</h3>
+            <p>Run a general practice: appointments and arrivals, patient charts, consultations with AI-drafted notes, prescribing with allergy checks, recalls and billing.</p>
             <ul class="ticks">
-              <li>Deviation → investigation → CAPA workflow</li>
-              <li>Audit planning and findings tracking</li>
-              <li>SOP versioning and training records</li>
+              <li>Home page for each role: reception, GP, nurse, manager</li>
+              <li>ICD-10 and WHODrug coding of the clinical record</li>
+              <li>Inbox for results and letters, with patient alerts</li>
             </ul>
             <div class="app-actions">
-              <a data-link="demo:qms" class="btn btn-neon" target="_blank" rel="noopener">Live demo</a>
-              <a data-link="use:qms" class="btn btn-outline">Use this app</a>
+              <a data-link="demo:clinic" class="btn btn-neon" target="_blank" rel="noopener">Live demo</a>
+              <a data-link="use:clinic" class="btn btn-outline">Use this app</a>
             </div>
           </article>
 
@@ -283,7 +286,7 @@
             <p class="price-desc">Build online for free. Pay from a prepaid balance only for what runs.</p>
             <ul class="ticks">
               <li>Online visual and AI-assisted builder, free</li>
-              <li>CTMS and IPM library apps, ready to use</li>
+              <li>CTMS, IPM and Clinic library apps, ready to use</li>
               <li>Environments sized single box or separate services, charged daily</li>
               <li>Tenants: <span data-price="tenant_creation">$10</span> to create, <span data-price="tenant_upkeep">$3</span> / mo each</li>
               <li>Upgrades, security patches, backups and monitoring by us</li>
@@ -421,6 +424,23 @@
 
   </main>
 
+  <!-- ===== Role videos ===== -->
+  <div class="cfg-backdrop" id="vid" role="dialog" aria-modal="true" aria-labelledby="vidTitle">
+    <div class="cfg vid">
+      <div class="cfg-head">
+        <div>
+          <h3 id="vidTitle"></h3>
+          <p id="vidSub">One short video for each role: what that person sees when they sign in, and a task or two.</p>
+        </div>
+        <button type="button" class="cfg-close" aria-label="Close" id="vidClose">&#10005;</button>
+      </div>
+      <div class="vid-body">
+        <video id="vidPlayer" controls playsinline preload="metadata"></video>
+        <div class="vid-list" id="vidList" role="tablist" aria-label="Roles"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ===== Configurator ===== -->
   <div class="cfg-backdrop" id="cfg" role="dialog" aria-modal="true" aria-labelledby="cfgTitle">
     <div class="cfg">
@@ -513,7 +533,7 @@
       login: 'https://platform.goqodon.com/login',
       signup: 'https://platform.goqodon.com/register',
       codebase: '',                      // open-source engine download / repository
-      demo: { ctms: '', ipm: '', qms: '' }
+      demo: { ctms: '', ipm: '', clinic: '' }
     };
     // The prices (the Console's public price book; ?pricebook=<url> to try another). Until it
     // answers, and if it can't, the figures written in the page stand.
@@ -535,6 +555,67 @@
       var p = el.dataset.link.split(':');
       setLink(el, platformLink(p[0], p[1]));
     });
+    // ---- role videos: one list per library app (files in videos/). An app without videos shows no poster. ----
+    var VIDEOS = {
+      ctms: { name: 'Clinical Trial Management', list: [] },
+      ipm: { name: 'Intellectual Property Management', list: [] },
+      clinic: { name: 'Clinic Management', list: [
+        { role: 'Reception', about: 'Arrivals, bookings and billing', file: 'clinic-reception' },
+        { role: 'GP', about: 'My day, the chart, a consultation and a prescription', file: 'clinic-gp' },
+        { role: 'Nurse', about: 'Nurse clinic, vaccines due and allergies', file: 'clinic-nurse' },
+        { role: 'Practice manager', about: 'Practice overview, invoices and staff', file: 'clinic-practice-manager' }
+      ] }
+    };
+    (function () {
+      var box = document.getElementById('vid'), player = document.getElementById('vidPlayer'), listEl = document.getElementById('vidList');
+      var opener = null;
+      function play(app, i) {
+        var v = VIDEOS[app].list[i];
+        player.poster = 'videos/' + v.file + '.jpg';
+        player.src = 'videos/' + v.file + '.mp4';
+        Array.prototype.forEach.call(listEl.children, function (b, n) { b.setAttribute('aria-selected', n === i ? 'true' : 'false'); });
+        player.play().catch(function () {});
+      }
+      function open(app) {
+        var set = VIDEOS[app];
+        opener = document.activeElement;
+        document.getElementById('vidTitle').textContent = set.name + ': role videos';
+        listEl.innerHTML = '';
+        set.list.forEach(function (v, i) {
+          var b = document.createElement('button');
+          b.type = 'button'; b.className = 'vid-item'; b.setAttribute('role', 'tab');
+          b.innerHTML = '<img alt="" src="videos/' + v.file + '.jpg"><span><b></b><small></small></span>';
+          b.querySelector('b').textContent = v.role;
+          b.querySelector('small').textContent = v.about;
+          b.addEventListener('click', function () { play(app, i); });
+          listEl.appendChild(b);
+        });
+        box.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        play(app, 0);
+        document.getElementById('vidClose').focus();
+      }
+      function close() {
+        if (!box.classList.contains('open')) return;
+        player.pause(); player.removeAttribute('src'); player.load();
+        box.classList.remove('open');
+        document.body.style.overflow = '';
+        if (opener && opener.focus) opener.focus();
+      }
+      document.querySelectorAll('[data-videos]').forEach(function (el) {
+        var set = VIDEOS[el.dataset.videos];
+        if (!set || !set.list.length) return;
+        el.querySelector('img').src = 'videos/' + set.list[0].file + '.jpg';
+        el.querySelector('.app-video-label').textContent = 'Watch ' + set.list.length + ' role videos';
+        el.setAttribute('aria-label', 'Watch ' + set.name + ' role videos');
+        el.hidden = false;
+        el.addEventListener('click', function () { open(el.dataset.videos); });
+      });
+      document.getElementById('vidClose').addEventListener('click', close);
+      box.addEventListener('click', function (e) { if (e.target === box) close(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    })();
+
     // links that aren't live yet do nothing instead of jumping to the top
     document.addEventListener('click', function (e) {
       var a = e.target.closest('a[aria-disabled="true"]');
